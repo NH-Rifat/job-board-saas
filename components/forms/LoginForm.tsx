@@ -8,7 +8,8 @@ import {
 
 import * as React from "react";
 import type { SVGProps } from "react";
-import { Button } from "../ui/button";
+import { signIn } from "@/app/utils/auth";
+import { GeneralSubmitButton } from "../general/SubmitButton";
 
 const Github = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -66,23 +67,23 @@ export function LoginForm() {
         <CardContent>
           <div className="grid gap-6">
             <div className="flex flex-col gap-4">
-              <form action="">
+              {/* <form action="">
                 <Button className="w-full py-5" variant={"outline"}>
                   <Google className="size-4" />
                   <span>Login with Google</span>
                 </Button>
-              </form>
-              <form action="">
+              </form> */}
+              {/* <form action="">
                 <Button className="w-full py-5" variant={"outline"}>
                   <Github />
                   <span>Login with GitHub</span>
                 </Button>
-              </form>
-              {/* <form
+              </form> */}
+              <form
                 action={async () => {
                   "use server";
                   await signIn("github", {
-                    redirectTo: "/onboarding",
+                    redirectTo: "/",
                   });
                 }}
               >
@@ -92,7 +93,7 @@ export function LoginForm() {
                   variant="outline"
                   width="w-full"
                 />
-              </form> */}
+              </form>
               {/* <form
                 action={async () => {
                   "use server";

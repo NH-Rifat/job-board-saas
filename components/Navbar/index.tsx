@@ -14,8 +14,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { auth } from "@/app/utils/auth";
-import { ThemeToggle } from "./ThemeToggle";
-import { UserDropdown } from "./UserDropdown";
+import { ThemeToggle } from "../general/ThemeToggle";
+import { UserDropdown } from "../general/UserDropdown";
 
 export async function Navbar() {
   const session = await auth();
